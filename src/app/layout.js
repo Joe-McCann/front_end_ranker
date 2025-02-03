@@ -11,6 +11,7 @@ export default function RootLayout({ children }) {
   const [showSignUp, setShowSignUp] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false); // Track modal visibility
   const [passwordError, setPasswordError] = useState(false);
+  const [showProfileModal, setShowProfileModal] = useState(false);
 
   const cleanUpState = () => {
     setPasswordError(false);
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
             {({ isLoggedIn, setUsername, setIsLoggedIn }) => (
               <button
                 className="header-button"
-                onClick={() => setShowLoginModal(true)}
+                onClick={() => isLoggedIn ? setShowProfileModal(true) : setShowLoginModal(true)}
               >
                 {isLoggedIn ? "Account" : "Login"}
               </button>

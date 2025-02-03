@@ -6,7 +6,8 @@ export const calcELOUpdates = (winnerELO, loserELO) =>
 
 export function getTwoRandomItems(list) {
     if (list.length < 2) {
-        throw new Error("List must contain at least two items to select random items.");
+        return []
+        //throw new Error("List must contain at least two items to select random items.");
     }
     
     const firstIndex = Math.floor(Math.random() * list.length);
